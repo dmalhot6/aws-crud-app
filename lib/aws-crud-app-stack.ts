@@ -112,7 +112,7 @@ export class AwsCrudAppStack extends cdk.Stack {
         period: cdk.Duration.minutes(1),
         statistic: 'Sum',
       }),
-      threshold: 5,
+      threshold: 100,
       evaluationPeriods: 1,
       alarmDescription: 'API Gateway is returning too many 4XX errors',
       actionsEnabled: true,
