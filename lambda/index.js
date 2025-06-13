@@ -31,6 +31,7 @@ exports.handler = async (event) => {
         // POST /items - Create a new item
         if (resourcePath === '/items') {
           const item = JSON.parse(event.body);
+          const orders = JSON.parse(event,body.orders)
           return await createItem(item);
         }
         break;
