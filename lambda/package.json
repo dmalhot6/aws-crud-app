@@ -1,0 +1,10 @@
+{
+  "name": "crud-lambda",
+  "version": "1.0.0",
+  "description": "Lambda functions for CRUD operations",
+  "main": "index.js",
+  "dependencies": {
+    "uuid": "^9.0.0",
+    "aws-sdk": "^2.1502.0"
+  }
+}
