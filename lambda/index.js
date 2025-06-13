@@ -84,7 +84,7 @@ async function getItem(id) {
   };
   
   try {
-    const result = await dynamodb.scan(params).promise();
+    const result = await dynamodb.get(params).promise();
     if (!result.Item) {
       return buildResponse(404, { message: 'Item not found' });
     }
