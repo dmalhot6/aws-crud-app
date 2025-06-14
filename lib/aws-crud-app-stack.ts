@@ -51,6 +51,16 @@ export class AwsCrudAppStack extends cdk.Stack {
       memorySize: 256,
     });
 
+     // Create another Lambda function
+    const utilityFunction = new lambda.Function(this, 'utilityFunction', {
+      runtime: lambda.Runtime.NODEJS_18_X,
+      handler: 'index.handler',
+      code: lambda.Code.fromAsset(path.join(__dirname, '../lambda')),
+      environment: lambdaEnvironment,
+      timeout: cdk.Duration.seconds(30),
+      memorySize: 256,
+    });
+
     // Grant the Lambda function read/write permissions to the DynamoDB table
     itemsTable.grantReadWriteData(crudFunction);
 
